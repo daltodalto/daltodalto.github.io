@@ -8,16 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: "600px",
+        md: "780px",
+        lg: "1000px",
+        xl: "1200px",
+      },
       color: {
-        "grey-100": "#FAFBFC",
-        "grey-200": "#F5F7FA",
-        "grey-300": "#E2E5E9",
-        "grey-400": "#A8ADB4",
-        "grey-500": "#8B9199",
-        "grey-600": "#6E767E",
-        "grey-700": "#515A63",
-        "grey-800": "#343B42",
-        "grey-900": "#171E24",
+        "gray-100": "#FAFBFC",
+        "gray-200": "#F5F7FA",
+        "gray-300": "#E2E5E9",
+        "gray-400": "#A8ADB4",
+        "gray-500": "#8B9199",
+        "gray-600": "#6E767E",
+        "gray-700": "#515A63",
+        "gray-800": "#343B42",
+        "gray-900": "#171E24",
 
         "primary-100": "#E1E6EB",
         "primary-200": "#B3C2CD",
