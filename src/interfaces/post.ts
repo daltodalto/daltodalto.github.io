@@ -8,7 +8,7 @@ export type Post = {
   author: string;
   id: string;
   project: string;
-  readMin: number;
+  readMin: string;
   totalCnt: number;
   monthlyCnt: number;
   weeklyCnt: number;
@@ -23,6 +23,7 @@ export type PostMeta = {
   date: string;
   tags: string[];
   totalCnt: number;
+  readMin: string;
 };
 
 export enum PostSort {

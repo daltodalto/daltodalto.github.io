@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  // purge: ["./src/app/**/*.css"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        "article-popular3-width": "calc(33.333% - 60px)",
+        "article-popular2-width": "calc(50% - 40px)",
+      },
       screens: {
         sm: "600px",
         md: "780px",

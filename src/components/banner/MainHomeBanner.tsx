@@ -1,6 +1,6 @@
 const MainHomeBanner = () => {
   return (
-    <section className="hidden lg:flex justify-center items-center h-[500px] mt-[80px] border-b-[1px] border-gray-900">
+    <section className="hidden lg:flex justify-center items-center h-[500px] border-b-[1px] border-gray-900">
       <div className="flex flex-col gap-[30px] xl:w-[1200px] w-full h-full pl-[40px] justify-center items-start">
         <h1 className="text-gray-800 text-[36px] font-semibold">
           새 롭 지 만 익 숙 하 게

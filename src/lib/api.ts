@@ -2,6 +2,7 @@ import { Post, PostMeta, PostSort } from "@/interfaces/post";
 import { join } from "path";
 import fs from "fs";
 import matter from "gray-matter";
+import { estimateReadingTime } from "@/service/readTime";
 
 const POST_ROOT_DIR = join(process.cwd(), "_posts/kr");
 
@@ -10,8 +11,9 @@ export function getPostBySlug(category: string, slug: string): Post {
   const fullPath = join(`${POST_ROOT_DIR}/${category}`, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
+  const readMin = estimateReadingTime(content);
 
-  return { ...data, slug: realSlug, content, category } as Post;
+  return { ...data, slug: realSlug, content, category, readMin } as Post;
 }
 
 export function getPostMetaBySlug(category: string, slug: string): PostMeta {
@@ -19,6 +21,7 @@ export function getPostMetaBySlug(category: string, slug: string): PostMeta {
   const fullPath = join(`${POST_ROOT_DIR}/${category}`, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
+  const readMin = estimateReadingTime(content);
   const { id, title, date, description, tags } = data as Post;
   return {
     id,
@@ -27,6 +30,7 @@ export function getPostMetaBySlug(category: string, slug: string): PostMeta {
     description,
     date,
     tags,
+    readMin,
   } as PostMeta;
 }
 
@@ -41,7 +45,6 @@ export function getAllPosts(): Post[] {
     );
     posts = [...posts, ...categoryPost];
   });
-  console.log(posts);
   return posts;
 }
 
