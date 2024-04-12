@@ -1,5 +1,5 @@
-import MainHomeBanner from "@/components/banner/MainHomeBanner";
 import Header from "@/components/common/Header";
+import MainHomeBanner from "@/components/banner/MainHomeBanner";
 import MainHomeAllArticle from "@/components/curations/MainHomeAllArticle";
 import MainHomePopularCuration from "@/components/curations/MainHomePopularCuration";
 import { PostSort } from "@/interfaces/post";
