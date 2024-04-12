@@ -1,18 +1,21 @@
 import MainHomeBanner from "@/components/banner/MainHomeBanner";
 import Header from "@/components/common/Header";
+import MainHomeAllArticle from "@/components/curations/MainHomeAllArticle";
 import MainHomePopularCuration from "@/components/curations/MainHomePopularCuration";
 import { PostSort } from "@/interfaces/post";
-import { getAllPostMeta, getAllPosts } from "@/lib/api";
+import { getAllPostMeta, getAllTags } from "@/lib/api";
 
 export default function Home() {
-  const allPostsMeta = getAllPostMeta(PostSort.Popular);
-  console.log(allPostsMeta);
+  const popularPostsMeta = getAllPostMeta(PostSort.Popular);
+  const allPostsMeta = getAllPostMeta(PostSort.Recently);
+  const allTags = getAllTags();
+
   return (
     <div className="pt-[80px]">
       <Header />
       <MainHomeBanner />
-      <MainHomePopularCuration allPostsMeta={allPostsMeta} />
-      {/* <main className="flex min-h-screen flex-col items-center justify-between p-24"></main> */}
+      <MainHomePopularCuration allPostsMeta={popularPostsMeta} />
+      <MainHomeAllArticle allPostsMeta={allPostsMeta} allTags={allTags} />
     </div>
   );
 }

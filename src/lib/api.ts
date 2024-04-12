@@ -48,6 +48,19 @@ export function getAllPosts(): Post[] {
   return posts;
 }
 
+export function getAllTags() {
+  let allPosts = getAllPostMeta();
+  let allTags: Set<string> = new Set<string>();
+
+  allPosts.map((item) => {
+    let postTags = new Set(item.tags);
+    postTags.forEach((tag) => {
+      allTags.add(tag);
+    });
+  });
+  return Array.from(allTags);
+}
+
 export function getAllPostMeta(
   sortBy: PostSort = PostSort.Recently
 ): PostMeta[] {
