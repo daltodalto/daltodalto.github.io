@@ -1,5 +1,5 @@
 export function getTagNameForURL(tagName: string) {
-  const replacedString = tagName.replace(/\s/g, "-");
+  const replacedString = tagName.toLowerCase().replace(/\s/g, "-");
 
   return replacedString;
 }

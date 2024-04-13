@@ -24,6 +24,7 @@ export function getPostBySlug(
     let realTags: Tag = {
       name: tagString,
       path: `$/${language}/tags/${getTagNameForURL(tagString)}`,
+      id: getTagNameForURL(tagString),
     };
     return realTags;
   });
@@ -50,6 +51,7 @@ export function getPostMetaBySlug(
     let realTags: Tag = {
       name: tagString,
       path: `/${language}/tags/${getTagNameForURL(tagString)}`,
+      id: getTagNameForURL(tagString),
     };
     return realTags;
   });
@@ -98,6 +100,7 @@ export function getAllTags(language: string = "kr") {
     return {
       name: tagName,
       path: `${language}/tags/${getTagNameForURL(tagName)}`, // path 생성 로직은 상황에 맞게 조정 필요
+      id: getTagNameForURL(tagName),
     };
   });
 
@@ -107,7 +110,8 @@ export function getAllTags(language: string = "kr") {
 
 export function getAllPostMeta(
   sortBy: PostSort = PostSort.Recently,
-  language: string = "kr"
+  language: string = "kr",
+  tagId: string | undefined = undefined
 ): PostMeta[] {
   let meta: PostMeta[] = [];
   const categories = fs.readdirSync(`${POST_ROOT_DIR}/${language}`, {
@@ -123,6 +127,12 @@ export function getAllPostMeta(
     );
     meta = [...meta, ...categoryMeta];
   });
+
+  if (tagId) {
+    meta = meta.filter((item) => {
+      return item.tags.some((tag) => tag.id === tagId);
+    });
+  }
 
   if (sortBy == PostSort.Recently) {
     meta.sort(function (a, b) {
