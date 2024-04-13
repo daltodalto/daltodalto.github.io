@@ -44,9 +44,9 @@ const PopularArticle = ({ index, postMeta }: PopularArticle) => {
                   return (
                     <div
                       className="border-gray300 px-[10px] py-[4px] border-[1px] rounded-[20px] text-[14px] text-gray-800"
-                      key={`${item}${index}`}
+                      key={`${item.name}${index}`}
                     >
-                      {item}
+                      {item.name}
                     </div>
                   );
                 })}

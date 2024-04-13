@@ -1,10 +1,9 @@
 import { PostMeta } from "@/interfaces/post";
 import MainArticle from "../article/MainArticle";
-import { getTagNameForURL } from "@/service/tagName";
 
 type MainHomeAllArticle = {
   allPostsMeta: PostMeta[];
-  allTags: string[];
+  allTags: Tag[];
 };
 
 const MainHomeAllArticle = ({ allPostsMeta, allTags }: MainHomeAllArticle) => {
@@ -32,12 +31,9 @@ const MainHomeAllArticle = ({ allPostsMeta, allTags }: MainHomeAllArticle) => {
             <div className="flex flex-row flex-wrap w-full gap-[10px]">
               {allTags.map((item, index) => {
                 return (
-                  <a
-                    key={`${item}${index}`}
-                    href={`/tags/${getTagNameForURL(item)}`}
-                  >
+                  <a key={`${item}${index}`} href={item.path}>
                     <div className="px-[12px] py-[8px] border-[1px] border-gray-300 text-gray-900 text-[16px]">
-                      {item}
+                      {item.name}
                     </div>
                   </a>
                 );

@@ -26,9 +26,9 @@ const MainArticle = ({ postMeta }: MainArticle) => {
               return (
                 <div
                   className="py-[4px] px-[10px] border-gray300 border-[1px] rounded-[100px] text-[14px] text-gray-800"
-                  key={`${item}${index}`}
+                  key={`${item.name}${index}`}
                 >
-                  {item}
+                  {item.name}
                 </div>
               );
             })}

@@ -4,7 +4,7 @@ export type Post = {
   title: string;
   description: string;
   date: string;
-  tags: string[];
+  tags: Tag[];
   author: string;
   id: string;
   project: string;
@@ -21,7 +21,7 @@ export type PostMeta = {
   title: string;
   description: string;
   date: string;
-  tags: string[];
+  tags: Tag[];
   totalCnt: number;
   readMin: string;
 };
