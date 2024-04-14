@@ -104,8 +104,15 @@ export function getAllTags(language: string = "kr") {
     };
   });
 
-  console.log(tagsArray);
   return tagsArray;
+}
+
+export function getPostsByCategory(language: string = "kr", category: string) {
+  let post = getAllPosts(language);
+  let filted = post.filter((item) => {
+    return item.category == category;
+  });
+  return filted;
 }
 
 export function getAllPostMeta(

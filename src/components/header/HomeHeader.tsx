@@ -2,7 +2,7 @@ import Image from "next/image";
 import HeaderProfileButton from "../button/HeaderProfileButton";
 import HeaderSearchButton from "../button/HeaderSearchButton";
 
-const Header = () => {
+const HomeHeader = () => {
   return (
     <header className="fixed top-[0px] flex flex-row justify-center w-[100%] sm:h-[80px] h-[60px] border-b-[1px] border-gray-900 bg-white z-50">
       <div className="flex justify-between items-center xl:w-[1200px] w-[100%] sm:px-[40px] px-[20px]">
@@ -35,4 +35,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;

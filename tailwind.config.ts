@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  // purge: ["./src/app/**/*.css"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,7 +14,7 @@ const config: Config = {
       },
       screens: {
         sm: "600px",
-        md: "780px",
+        md: "700px",
         lg: "1000px",
         xl: "1200px",
       },
@@ -53,8 +52,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      textShadow: {
+        default: "2px 2px 8px rgba(0, 0, 0, 0.5)",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-textshadow")],
 };
 export default config;

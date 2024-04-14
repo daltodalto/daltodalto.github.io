@@ -1,4 +1,4 @@
-import Header from "@/components/common/Header";
+import HomeHeader from "@/components/header/HomeHeader";
 import MainHomeBanner from "@/components/banner/MainHomeBanner";
 import MainHomeAllArticle from "@/components/curations/MainHomeAllArticle";
 import MainHomePopularCuration from "@/components/curations/MainHomePopularCuration";
@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div className="pt-[80px]">
-      <Header />
+      <HomeHeader />
       <MainHomeBanner />
       <MainHomePopularCuration allPostsMeta={popularPostsMeta} />
       <MainHomeAllArticle allPostsMeta={allPostsMeta} allTags={allTags} />
