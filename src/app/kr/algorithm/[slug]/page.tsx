@@ -24,9 +24,8 @@ export default function DetailPage({ params }: Params) {
 }
 
 export async function generateStaticParams() {
-  // const { category, language } = getPostPathInfo();
-
-  const posts = getPostsByCategory("kr", "algorithm");
+  const { language, category } = getPostPathInfo();
+  const posts = getPostsByCategory(language, category);
 
   return posts.map((post) => ({
     slug: post.slug,

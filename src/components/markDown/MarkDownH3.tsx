@@ -9,7 +9,7 @@ type MarkDownH3 = {
 
 const MarkDownH3 = ({ props }: MarkDownH3) => {
   return (
-    <h1 className="text-[24px] font-medium leading-[40px] py-[25px] text-gray-800">
+    <h1 className="md:text-[24px] text-[20px] font-medium leading-[140%] md:py-[30px] py-[18px] text-gray-800">
       {props.children}
     </h1>
   );

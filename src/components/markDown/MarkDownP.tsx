@@ -21,7 +21,11 @@ const MarkDownP = ({ props }: MarkDownP) => {
       <MarkDownImage src={image.properties.src} alt={image.properties.alt} />
     );
   }
-  return <p className="text-[15px] leading-[27px] text-gray-800">{children}</p>;
+  return (
+    <p className="md:text-[16px] text-[15px] leading-[180%] text-gray-800 md:py-[20px] py-[20px]">
+      {children}
+    </p>
+  );
 };
 
 export default MarkDownP;

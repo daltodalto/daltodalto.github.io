@@ -33,6 +33,10 @@ body {
   text-align: -webkit-match-parent;
 }
 
+blockquote p {
+  padding: 0px !important;
+}
+
 /* table */
 tr:nth-child(even) {
   background-color: #2e2649;

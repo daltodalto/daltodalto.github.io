@@ -18,7 +18,7 @@ export function MarkDownCode({ props }: MarkDownCode): React.ReactNode {
   const value = String(children).replace(/\n$/, "");
 
   return match ? (
-    <div className="flex flex-col flex-1 py-[40px]">
+    <div className="flex flex-col flex-1 md:py-[40px] py-[30px]">
       <div className="flex flex-row justify-between items-center h-[40px] bg-[#3C3C3C] text-gray-100 text-[13px] py-0 px-[20px] rounded-t-[10px]">
         <div className="flex flex-row gap-[8px]">
           <div className="w-[12px] h-[12px] bg-[#FE5F57] rounded-[6px]" />
@@ -27,7 +27,11 @@ export function MarkDownCode({ props }: MarkDownCode): React.ReactNode {
         </div>
         {language}
       </div>
-      <Prism language={language} style={customCodeStyle}>
+      <Prism
+        className="md:text-[18px] text-[15px]"
+        language={language}
+        style={customCodeStyle}
+      >
         {value}
       </Prism>
     </div>

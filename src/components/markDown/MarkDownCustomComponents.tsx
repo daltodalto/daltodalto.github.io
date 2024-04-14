@@ -9,6 +9,7 @@ import MarkDownP from "./MarkDownP";
 import MarkDownA from "./MarkDownA";
 import MarkDownStrong from "./MarkDownStrong";
 import MarkDownEm from "./MarkDownEm";
+import MarkDownBlockquote from "./MarkDownBlockquote";
 
 interface CustomComponents extends Partial<Components> {
   custom: React.ComponentType<{ children: React.ReactNode }>;
@@ -40,8 +41,11 @@ export const components: CustomComponents = {
     const { src, alt } = props;
     return <MarkDownImage src={src} alt={alt} />;
   },
-  custom: ({ ...props }) => {
+  custom: (props) => {
     return <div>커스텀</div>;
+  },
+  blockquote(props) {
+    return <MarkDownBlockquote props={props} />;
   },
   aside(props) {
     return <MarkDownAside props={props} />;

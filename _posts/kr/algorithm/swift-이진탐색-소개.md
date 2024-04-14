@@ -12,9 +12,6 @@ monthlyCnt: 0
 weeklyCnt: 0
 ---
 
-&nbsp;
-&nbsp;
-
 # 이진탐색이란 ?
 
 ---
@@ -22,8 +19,6 @@ weeklyCnt: 0
 이진 탐색은 **이미 정렬된 리스트**에서 원하는 값을 찾는 데에 사용되는 검색 알고리즘입니다. 이진 탐색은 divide-and-conquer(분할 정복) 전략을 사용하여 리스트를 반으로 나누고, 찾고자 하는 값과 중간값을 비교하여 해당 값이 중간값보다 작으면 왼쪽 반에서 탐색을 계속하고, 크면 오른쪽 반에서 탐색을 계속합니다. 이러한 과정을 반복하면서 원하는 값이 나올 때까지 계속 반으로 나누어 찾아가는 것입니다.
 
 이진 탐색은 최악의 경우에도 O(log n)의 시간 복잡도를 가지므로 매우 효율적인 검색 알고리즘 중 하나입니다. 하지만 리스트가 정렬되어 있어야 하고, 새로운 값을 추가할 때마다 리스트를 다시 정렬해야 하므로 삽입/삭제 연산에는 적합하지 않습니다.
-
-&nbsp;
 
 # 이진 탐색 코드 구현(Swift)
 
@@ -62,8 +57,6 @@ func binarySearch<T: Comparable>(_ array: [T], key: T) -> Int? {
 > - Int, UInt, Double, Float, CGFloat
 > - String, Character
 
-&nbsp;
-
 # 재귀함수로 작성
 
 ---
@@ -87,8 +80,6 @@ func binarySearch2<T: Comparable>(_ array: [T], key: T, range: Range<Int>) -> In
 }
 ```
 
-&nbsp;
-
 # 이진 탐색으로 풀 수 있는 문제.
 
 ---
@@ -103,8 +94,6 @@ func binarySearch2<T: Comparable>(_ array: [T], key: T, range: Range<Int>) -> In
 
 5. 자신이 원하는 값을 찾을 때까지 탐색하는 문제: 이진 탐색은 자신이 원하는 값을 찾을 때까지 반복적으로 탐색을 수행하는데, 이러한 방식은 이진 탐색을 이용한 다양한 문제에서 유용하게 활용됩니다.
 
-&nbsp;
-
 # 기타 및 참고 자료
 
 ---
@@ -114,7 +103,3 @@ func binarySearch2<T: Comparable>(_ array: [T], key: T, range: Range<Int>) -> In
 - ["프로그래머스"](https://programmers.co.kr/)
 - ["백준"](https://www.acmicpc.net/)
 - ["이것이 취업을 위한 코딩테스트다"](https://product.kyobobook.co.kr/detail/S000001810273?utm_source=google&utm_medium=cpc&utm_campaign=googleSearch&gt_network=g&gt_keyword=&gt_target_id=aud-901091942354:dsa-608444978378&gt_campaign_id=9979905549&gt_adgroup_id=132556570510&gclid=Cj0KCQjw_r6hBhDdARIsAMIDhV_FejwwhSFue2tP0WVJ6aA7CXKkT4IIop9fQy8idOEPW6wszz4vjYMaApsxEALw_wcB)
-
-&nbsp;
-&nbsp;
-&nbsp;
