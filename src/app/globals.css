@@ -11,3 +11,36 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.md-to-html > :first-child {
+  padding-top: 0 !important;
+}
+
+.md-to-html ul {
+  display: block;
+  list-style-type: disc;
+  padding-inline-start: 1.5em;
+}
+
+.md-to-html ol {
+  display: block;
+  list-style-type: decimal;
+  padding-inline-start: 1.5em;
+}
+
+.md-to-html li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+/* table */
+tr:nth-child(even) {
+  background-color: #2e2649;
+}
+tr:nth-child(odd) {
+  background-color: #423b5b;
+}
+th {
+  background-color: #342f44;
+  color: white;
+}

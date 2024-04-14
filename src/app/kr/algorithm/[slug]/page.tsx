@@ -1,7 +1,8 @@
-import PostDetailHeroBanner from "@/components/banner/PostDetailHeroBanner";
+import ArticleDetail from "@/components/article/ArticleDetail";
 import PostDetailHeader from "@/components/header/PostDetailHeader";
-import { getPostBySlug, getPostsByCategory } from "@/lib/api";
+import PostDetailHeroBanner from "@/components/banner/PostDetailHeroBanner";
 import { getPostPathInfo } from "@/service/postInfo";
+import { getPostBySlug, getPostsByCategory } from "@/lib/api";
 
 type Params = {
   params: {
@@ -17,14 +18,15 @@ export default function DetailPage({ params }: Params) {
     <>
       <PostDetailHeader />
       <PostDetailHeroBanner post={post} />
+      <ArticleDetail post={post} />
     </>
   );
 }
 
 export async function generateStaticParams() {
-  const { category, language } = getPostPathInfo();
+  // const { category, language } = getPostPathInfo();
 
-  const posts = getPostsByCategory(language, category);
+  const posts = getPostsByCategory("kr", "algorithm");
 
   return posts.map((post) => ({
     slug: post.slug,
