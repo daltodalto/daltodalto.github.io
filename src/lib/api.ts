@@ -20,6 +20,7 @@ export function getPostBySlug(
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
   const readMin = estimateReadingTime(content);
+
   const tags = data.tags.map((tagString: string) => {
     let realTags: Tag = {
       name: tagString,

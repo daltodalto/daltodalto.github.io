@@ -1,9 +1,9 @@
-import HomeHeader from "@/components/header/HomeHeader";
 import MainHomeBanner from "@/components/banner/MainHomeBanner";
 import MainHomeAllArticle from "@/components/curations/MainHomeAllArticle";
 import MainHomePopularCuration from "@/components/curations/MainHomePopularCuration";
 import { PostSort } from "@/interfaces/post";
 import { getAllPostMeta, getAllTags } from "@/lib/api";
+import HomeHeader from "@/components/header/HomeHeader";
 
 export default function Home() {
   const popularPostsMeta = getAllPostMeta(PostSort.Popular);

@@ -1,14 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import HeaderProfileButton from "../button/HeaderProfileButton";
 import HeaderSearchButton from "../button/HeaderSearchButton";
 import { useEffect, useState } from "react";
+import { HeaderType } from "./HomeHeader";
+import HomeLogo from "./logo/HomeLogo";
+import { LAYOUT_CONSTANTS } from "@/constants/layout";
+import { useIsMobile } from "@/lib/useIsMobile";
 
 const PostDetailHeader = () => {
-  const [isYellowLogo, setIsYellowLogo] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const isMobile = useIsMobile();
+  const [type, setType] = useState<HeaderType>(HeaderType.SCROLL_TOP);
   const [progress, setProgress] = useState(0);
+
+  const tailwindLargeHeaderHeight = `sm:h-[${LAYOUT_CONSTANTS.LARGE_HEADER_HEIGHT}px]`;
+  const tailwindSmallHeaderHeight = `h-[${LAYOUT_CONSTANTS.SMALL_HEADER_HEIGHT}px]`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,50 +26,55 @@ const PostDetailHeader = () => {
       const scroll = totalScroll / windowHeight;
 
       setProgress(scroll);
+      const targetSize = isMobile
+        ? LAYOUT_CONSTANTS.SMALL_DETAIL_BANNER_HEIGHT
+        : LAYOUT_CONSTANTS.LARGE_DETAIL_BANNER_HEIGHT;
 
-      if (window.scrollY > 700 - 80) {
-        setIsScrolled(true);
+      if (window.scrollY > targetSize) {
+        setType(HeaderType.SCROLL_DOWN);
       } else {
-        setIsScrolled(false);
+        setType(HeaderType.SCROLL_TOP);
       }
     };
     window.addEventListener("scroll", handleScroll);
-    setIsYellowLogo(true);
+
     handleScroll();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
-    <header className="fixed top-[0px] flex flex-row justify-center w-[100%] sm:h-[80px] h-[60px] z-50">
-      <div className="flex justify-between items-center xl:w-[1200px] w-[100%] sm:px-[40px] px-[20px]">
-        <Image
-          className="sm:block hidden"
-          width={140}
-          height={(140 * 40) / 160}
-          src="/dallogLogoDark.png"
-          alt="로고"
+    <div className="flex flex-col w-full fixed top-[0px] z-50 ">
+      <header
+        className={` flex flex-row justify-center w-[100%] ${tailwindLargeHeaderHeight} ${tailwindSmallHeaderHeight}  ${
+          type == HeaderType.SCROLL_DOWN
+            ? "bg-blue backdrop-blur-[4px] bg-opacity-[0.8] sm:animate-height-pulse animate-sm-height-pulse"
+            : ""
+        }`}
+      >
+        <div className="flex justify-between items-center xl:w-[1200px] w-[100%] sm:px-[40px] px-[20px]">
+          <HomeLogo screen="DETAIL" type={type} />
+          <nav>
+            <ul className="flex flex-row md:gap-[20px] gap-[10px]">
+              <li>
+                <HeaderSearchButton screen="DETAIL" type={type} />
+              </li>
+              <li>
+                <HeaderProfileButton screen="DETAIL" type={type} />
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div className="w-full flex flex-row justify-start">
+        <div
+          className="h-[2px] bg-[#F2D024] filter-blur-4"
+          style={{ width: `${progress * 100}%` }}
         />
-        <Image
-          className="sm:hidden"
-          width={104}
-          height={(104 * 40) / 160}
-          src="/dallogLogoDark.png"
-          alt="로고"
-        />
-        <nav>
-          <ul className="flex flex-row md:gap-[20px] gap-[10px]">
-            <li>
-              <HeaderSearchButton />
-            </li>
-            <li>
-              <HeaderProfileButton />
-            </li>
-          </ul>
-        </nav>
       </div>
-    </header>
+    </div>
   );
 };
 

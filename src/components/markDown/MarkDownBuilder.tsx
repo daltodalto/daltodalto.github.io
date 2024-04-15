@@ -3,6 +3,7 @@ import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import { components } from "./MarkDownCustomComponents";
+import { makeTOCIdPlugin } from "@/lib/toc";
 type MarkDownBuilder = {
   post: Post;
 };
@@ -13,7 +14,7 @@ const MarkDownBuilder = ({ post }: MarkDownBuilder) => {
       <Markdown
         className="md-to-html"
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
+        rehypePlugins={[rehypeRaw, makeTOCIdPlugin]}
         components={components}
       >
         {post.content}

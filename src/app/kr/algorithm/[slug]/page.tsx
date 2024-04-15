@@ -3,6 +3,7 @@ import PostDetailHeader from "@/components/header/PostDetailHeader";
 import PostDetailHeroBanner from "@/components/banner/PostDetailHeroBanner";
 import { getPostPathInfo } from "@/service/postInfo";
 import { getPostBySlug, getPostsByCategory } from "@/lib/api";
+import { getToc } from "@/lib/toc";
 
 type Params = {
   params: {
@@ -10,15 +11,16 @@ type Params = {
   };
 };
 
-export default function DetailPage({ params }: Params) {
+export default async function DetailPage({ params }: Params) {
   const { category, language } = getPostPathInfo();
   const post = getPostBySlug(language, category, params.slug);
+  const toc = await getToc(post.content);
 
   return (
     <>
       <PostDetailHeader />
       <PostDetailHeroBanner post={post} />
-      <ArticleDetail post={post} />
+      <ArticleDetail post={post} toc={toc} />
     </>
   );
 }
