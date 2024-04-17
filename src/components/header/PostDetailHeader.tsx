@@ -8,13 +8,14 @@ import HomeLogo from "./logo/HomeLogo";
 import { LAYOUT_CONSTANTS } from "@/constants/layout";
 import { useIsMobile } from "@/lib/useIsMobile";
 
-const PostDetailHeader = () => {
+type PostDetailHeader = {
+  language: string;
+};
+
+const PostDetailHeader = ({ language }: PostDetailHeader) => {
   const isMobile = useIsMobile();
   const [type, setType] = useState<HeaderType>(HeaderType.SCROLL_TOP);
   const [progress, setProgress] = useState(0);
-
-  const tailwindLargeHeaderHeight = `sm:h-[${LAYOUT_CONSTANTS.LARGE_HEADER_HEIGHT}px]`;
-  const tailwindSmallHeaderHeight = `h-[${LAYOUT_CONSTANTS.SMALL_HEADER_HEIGHT}px]`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,14 +49,14 @@ const PostDetailHeader = () => {
   return (
     <div className="flex flex-col w-full fixed top-[0px] z-50 ">
       <header
-        className={` flex flex-row justify-center w-[100%] ${tailwindLargeHeaderHeight} ${tailwindSmallHeaderHeight}  ${
+        className={`flex flex-row justify-center w-[100%] sm:h-[80px] h-[60px]  ${
           type == HeaderType.SCROLL_DOWN
             ? "bg-blue backdrop-blur-[4px] bg-opacity-[0.8] sm:animate-height-pulse animate-sm-height-pulse"
             : ""
         }`}
       >
         <div className="flex justify-between items-center xl:w-[1200px] w-[100%] sm:px-[40px] px-[20px]">
-          <HomeLogo screen="DETAIL" type={type} />
+          <HomeLogo screen="DETAIL" type={type} language={language} />
           <nav>
             <ul className="flex flex-row md:gap-[20px] gap-[10px]">
               <li>

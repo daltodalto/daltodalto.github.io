@@ -12,6 +12,9 @@ export function getPostBySlug(
   category: string,
   slug: string
 ): Post {
+  console.log("language : " + language);
+  console.log("category : " + category);
+  console.log("slug : " + slug);
   const realSlug = decodeURIComponent(slug.replace(/\.md$/, ""));
   const fullPath = join(
     `${POST_ROOT_DIR}/${language}/${category}`,
@@ -113,6 +116,7 @@ export function getPostsByCategory(language: string = "kr", category: string) {
   let filted = post.filter((item) => {
     return item.category == category;
   });
+  console.log("filted", filted);
   return filted;
 }
 

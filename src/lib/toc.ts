@@ -18,7 +18,11 @@ export const makeTOCIdPlugin: Plugin = () => {
         node.tagName == "h2" ||
         node.tagName == "h3"
       ) {
-        const title = node.children[0].value; // 제목 텍스트 추출
+        let title = "";
+        if (node.children.length > 0) {
+          title = node.children[0].value; // 제목 텍스트 추출
+        }
+
         const id = generateTOCId(title); // 해시 기반 ID 생성
 
         if (!node.properties) node.properties = {};

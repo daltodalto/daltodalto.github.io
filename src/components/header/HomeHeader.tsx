@@ -11,12 +11,13 @@ export enum HeaderType {
   SCROLL_DOWN,
 }
 
-const HomeHeader = () => {
+type HomeHeader = {
+  language: string;
+};
+
+const HomeHeader = ({ language }: HomeHeader) => {
   const [type, setType] = useState<HeaderType>(HeaderType.SCROLL_TOP);
   const [progress, setProgress] = useState(0);
-
-  const tailwindLargeHeaderHeight = `sm:h-[${LAYOUT_CONSTANTS.LARGE_HEADER_HEIGHT}px]`;
-  const tailwindSmallHeaderHeight = `h-[${LAYOUT_CONSTANTS.SMALL_HEADER_HEIGHT}px]`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,14 +48,14 @@ const HomeHeader = () => {
   return (
     <div className="flex flex-col w-full fixed top-[0px]">
       <header
-        className={`flex flex-row justify-center w-[100%] ${tailwindLargeHeaderHeight} ${tailwindSmallHeaderHeight} border-b-[1px] border-gray-900 z-50 ${
+        className={`flex flex-row justify-center w-[100%] sm:h-[80px] h-[60px] border-b-[1px] border-gray-900 z-50 ${
           type == HeaderType.SCROLL_DOWN
             ? "bg-blue backdrop-blur-[4px] bg-opacity-[0.8] md:animate-height-pulse animate-sm-height-pulse"
             : "bg-gray-100"
         }`}
       >
         <div className="flex justify-between items-center xl:w-[1200px] w-[100%] sm:px-[40px] px-[20px]">
-          <HomeLogo screen="HOME" type={type} />
+          <HomeLogo screen="HOME" type={type} language={language} />
           <nav>
             <ul className="flex flex-row md:gap-[20px] gap-[10px]">
               <li>

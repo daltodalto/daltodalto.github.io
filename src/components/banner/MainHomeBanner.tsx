@@ -1,10 +1,9 @@
 import { LAYOUT_CONSTANTS } from "@/constants/layout";
 
 const MainHomeBanner = () => {
-  const tailwindBannerHeight = `h-[${LAYOUT_CONSTANTS.LARGE_HOME_BANNER_HEIGHT}px]`;
   return (
     <section
-      className={`hidden lg:flex justify-center items-center ${tailwindBannerHeight} border-b-[1px] border-gray-900`}
+      className={`hidden lg:flex justify-center items-center h-[500px] border-b-[1px] border-gray-900`}
     >
       <div className="flex flex-col gap-[30px] xl:w-[1200px] w-full h-full pl-[40px] justify-center items-start">
         <h1 className="text-gray-800 text-[36px] font-semibold">

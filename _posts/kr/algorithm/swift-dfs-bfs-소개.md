@@ -12,9 +12,6 @@ monthlyCnt: 0
 weeklyCnt: 0
 ---
 
-&nbsp;
-&nbsp;
-
 # DFS/BFS란 ?
 
 ---
@@ -26,8 +23,6 @@ DFS는 깊이 우선 탐색 알고리즘이며, 스택이나 재귀 함수를 �
 BFS는 너비 우선 탐색 알고리즘이며, 큐를 사용하여 구현됩니다. 이 알고리즘은 한 노드에서 시작하여 인접한 노드를 모두 방문한 후, 이어지는 모든 노드를 탐색합니다. 즉, BFS는 노드의 깊이가 낮은 것부터 탐색하며, 최단 경로 문제를 해결하는 데 사용됩니다.
 
 DFS와 BFS는 둘 다 그래프 탐색에 사용되지만, DFS는 한 경로를 따라 탐색하며, BFS는 모든 인접한 노드를 탐색합니다. 이러한 차이점은 DFS와 BFS를 사용할 때 해결하려는 문제에 따라 선택해야 합니다.
-
-&nbsp;
 
 # Swift 코드로 DFS 구현
 
@@ -65,8 +60,6 @@ var visited = [Bool](repeating: false, count: graph.count)
 
 dfs(graph, 1, &visited)
 ```
-
-&nbsp;
 
 # Swift 코드로 BFS 구현
 
@@ -109,8 +102,6 @@ var visited = [Bool](repeating: false, count: graph.count)
 dfs(graph, 1, &visited)
 ```
 
-&nbsp;
-
 # DFS 대표 문제
 
 ---
@@ -119,8 +110,6 @@ dfs(graph, 1, &visited)
 2. 미로 찾기: DFS는 미로 찾기 문제를 해결하는 데 사용됩니다. 미로를 그래프로 모델링하고, 시작점에서 출발하여 목적지에 도달할 때까지 DFS를 반복하여 경로를 찾습니다.
 3. 위상 정렬: DFS는 방향 그래프에서 위상 정렬을 수행하는 데 사용됩니다. DFS를 수행하면서 더 이상 방문할 수 없는 노드부터 역순으로 정렬하여 위상 정렬을 수행할 수 있습니다.
 4. 연결 요소 찾기: DFS는 그래프에서 연결 요소를 찾는 데 사용됩니다. DFS를 수행하면서 방문한 노드들을 하나의 연결 요소로 묶을 수 있습니다.
-
-&nbsp;
 
 # BFS 대표 문제
 
@@ -132,8 +121,6 @@ dfs(graph, 1, &visited)
 4. 상태 공간 탐색: BFS는 상태 공간 탐색에 사용됩니다. 상태 공간은 가능한 상태의 모음을 말하며, 각 상태는 그래프의 노드로 모델링됩니다. BFS를 사용하여 시작 상태에서 목적 상태로 이동할 수 있는 모든 경로를 찾을 수 있습니다.
 5. 컴파일러 최적화: BFS는 컴파일러에서 코드 최적화를 수행하는 데 사용됩니다. 컴파일러는 소스 코드를 그래프로 모델링하고, BFS를 사용하여 코드 최적화를 수행합니다.
 
-&nbsp;
-
 # 참고 자료
 
 ---
@@ -143,7 +130,3 @@ dfs(graph, 1, &visited)
 - ["프로그래머스"](https://programmers.co.kr/)
 - ["백준"](https://www.acmicpc.net/)
 - ["이것이 취업을 위한 코딩테스트다"](https://product.kyobobook.co.kr/detail/S000001810273?utm_source=google&utm_medium=cpc&utm_campaign=googleSearch&gt_network=g&gt_keyword=&gt_target_id=aud-901091942354:dsa-608444978378&gt_campaign_id=9979905549&gt_adgroup_id=132556570510&gclid=Cj0KCQjw_r6hBhDdARIsAMIDhV_FejwwhSFue2tP0WVJ6aA7CXKkT4IIop9fQy8idOEPW6wszz4vjYMaApsxEALw_wcB)
-
-&nbsp;
-&nbsp;
-&nbsp;
