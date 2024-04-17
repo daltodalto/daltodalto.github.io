@@ -6,6 +6,7 @@ import { getAllPostMeta, getAllTags } from "@/lib/api";
 import HomeHeader from "@/components/header/HomeHeader";
 import path from "path";
 import { getHomeLanguage } from "@/service/postInfo";
+
 const categoryDirectoryName = path.dirname(__dirname);
 const language = getHomeLanguage(categoryDirectoryName);
 
