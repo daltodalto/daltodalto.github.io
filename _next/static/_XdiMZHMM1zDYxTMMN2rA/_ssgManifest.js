@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fkr\u002Falgorithm\u002F[slug]","\u002Fkr\u002Fswift\u002F[slug]","\u002Fkr\u002Ftags\u002F[slug]","\u002Fkr\u002Fweb\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

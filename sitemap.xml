@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://dallog.co.kr/kr-common-sitemap.xml</loc>
+    <lastmod>2024-04-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://dallog.co.kr/kr-category-sitemap.xml</loc>
+    <lastmod>2024-04-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://dallog.co.kr/kr-swift-sitemap.xml</loc>
+    <lastmod>2024-04-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://dallog.co.kr/kr-algorithm-sitemap.xml</loc>
+    <lastmod>2024-04-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://dallog.co.kr/kr-web-sitemap.xml</loc>
+    <lastmod>2024-04-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://dallog.co.kr/kr-tags-sitemap.xml</loc>
+    <lastmod>2024-04-27</lastmod>
+  </sitemap>
+</sitemapindex>
